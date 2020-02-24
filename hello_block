@@ -1,0 +1,22 @@
+# import hashlib
+# hash = hashlib.sha256("Hello Message".encode()).hexdigest()
+# print(hash)
+from Block import Block
+
+blockchain = []
+
+# first block is the genesis block
+genesis_block = Block("Chancelor on the brink", [
+    "A sent 1 BTC to B"
+    "A sent 2 BTC to B"
+    "A sent 3 BTC to B"
+    "A sent 4 BTC to B"
+])
+
+print(genesis_block.block_hash)
+
+# This is the GENESIS BLOCK HASH:   8bbf8aa81b538f77dbd7a4f72ee4f627c30fbba60b1750546d1882dcd06d1e53
+
+second_block = Block(genesis_block.block_hash, ["B returned 7 BTC to A"])
+
+print(second_block.block_hash)
